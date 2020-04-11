@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Book Keeper</title>
+		
+		<script src="https://kit.fontawesome.com/877be468a9.js" crossorigin="anonymous"></script>
+		<link type="text/css" rel="stylesheet" href="bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container mt-4">
+			<h1 class="display-4 text-center"><i class="fas fa-book-open text-primary"></i> My<span class="text-primary">Book</span>List</h1>
+			
+			<form id="book-form">
+				<div class="form-group">
+					<label for="title" class="customLabel">Title</label>
+					<input class="form-control" id="title" type="text">
+				</div>
+				<div class="form-group">
+					<label for="author" class="customLabel">Author</label>
+					<input class="form-control" id="author" type="text">
+				</div>
+				<div class="form-group">
+					<label for="isbn" class="customLabel">ISBN#</label>
+					<input class="form-control" id="isbn" type="text">
+				</div>
+
+				<input type="submit" value="Add Book"
+				class="btn btn-primary btn-block" id="addbook">
+			</form>
+
+			<table class="table table-striped mt-5">
+				<thead>
+					<tr class="center-text">
+						<th>Date</th><th>Title</th><th>Author</th><th>ISBN#</th><th></th>
+					</tr>
+				</thead>
+				<tbody id="book-list"></tbody>
+			</table>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
