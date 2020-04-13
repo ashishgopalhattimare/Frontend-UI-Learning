@@ -108,10 +108,10 @@ function flipCard() {
 
                 correctCards += 2;
                 if(correctCards === TOTAL_CARD) {
-                    console.log('you won');
+                    clearInterval(timer);
                     gameStart = false;
 
-                    clearInterval(timer);
+                    $("#playerwon").modal();
                 }
             }
             else {
