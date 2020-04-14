@@ -9,14 +9,29 @@ for(const num of numbers) {
 const CARD_MATCH = "card-match";
 const TOTAL_CARD = 15;
 
-let correctCards = 1, seconds = 0, moves = 0;
+let correctCards, seconds, moves;
 let firstCard, secondCard;
-let firstPick = true, nextMove = true;
-let gameStart = false;
-let timer;
+let firstPick, nextMove, gameStart, timer;
 
 const timeElement = document.getElementById("timeText");
 const moveElement = document.getElementById("moveText");
+const modalScore  = document.getElementById("modalInfo");
+
+const refresh = document.getElementById("refresh");
+refresh.addEventListener('click', () => {
+
+    if(refresh.classList.contains("rotate-image") === false) {
+
+        refresh.classList.toggle("rotate-image");
+        generateCard();
+
+        clearInterval(timer);
+        timeElement.innerText = seconds;
+        moveElement.innerText = moves;
+
+        setTimeout(() => refresh.classList.toggle("rotate-image"), 1000);
+    }
+})
 
 const randomCard = () => Math.floor(Math.random() * allCards.length);
 
@@ -30,6 +45,10 @@ function shuffle(array) {
 // TOTAL 15 CARD : 14 USEFULL, 1 USELESS
 function generateCard()
 {
+    correctCards = 1 ; seconds  = 0; moves = 0;
+    firstPick = true ; nextMove = true;
+    gameStart = false;
+
     shuffle(allCards);
     let setCard = new Set(), gameCards = [];
 
@@ -64,7 +83,7 @@ function generateCard()
 
 function incrementSeconds() {
     seconds += 1;
-    timeElement.innerText = `${seconds} sec`;
+    timeElement.innerText = seconds;
 }
 
 function flipCard() {
@@ -111,6 +130,7 @@ function flipCard() {
                     clearInterval(timer);
                     gameStart = false;
 
+                    modalScore.innerText = `With ${moves} moves in ${seconds} seconds.`
                     $("#playerwon").modal();
                 }
             }

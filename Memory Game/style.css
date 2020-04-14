@@ -36,3 +36,8 @@ body {
     width: 80px;
     position: absolute;
 }
+
+.rotate-image {
+    transform : rotate(360deg);
+    transition: transform .8s ease-in-out;
+}
