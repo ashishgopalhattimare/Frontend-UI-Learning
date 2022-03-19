@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Interactive Rating Component</title>
+		
+		<link type="text/css" rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+            <div class="card">
+                <div id="card-front">
+                    <section class="header">
+                        <span class="circle-content mb-4">
+                            <img src="assets/icon-star.svg" width="15px" height="15px" alt="icon-star">
+                        </span>
+                    </section>
+                    <section class="content">
+                        <span class="title">How did we do?</span>
+                        <p class="main">
+                            Please let us know how we did with your support 
+                            request. All feedback is appreciated to help us 
+                            improve out offering!
+                        </p>
+                        <ul class="rating-list">
+                            <li class="rating-item circle-content">1</li>
+                            <li class="rating-item circle-content">2</li>
+                            <li class="rating-item circle-content">3</li>
+                            <li class="rating-item circle-content">4</li>
+                            <li class="rating-item circle-content">5</li>
+                        </ul>
+                    </section>
+                    <section class="footer">
+                        <button id="rating-submit">SUBMIT</button>
+                    </section>
+                </div>
+                <div id="card-back">
+                    <section class="header">
+                        <img src="assets/illustration-thank-you.svg" width="110px" alt="thank-you">
+                    </section>
+                    <section class="content">
+                        <span class="content-center" id="rating-result">
+                            <span class="mt-2 mb-2" id="rating-result-label">You selected 4 out of 5</span>
+                        </span>
+                        <label class="content-center text-white mt-3" style="font-size: 1.3rem">
+                            Thank you!
+                        </label>
+                        <p style="text-align: center;">
+                            We appreciate you taking the time to give a rating.
+                            If you ever need more support, don't hesitate to
+                            get in touch!
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
