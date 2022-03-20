@@ -46,6 +46,8 @@ button, .button {
     background-image: $gradient-green-cyan;
     color: $white;
     font-weight: 400;
+    transition: $opacity-ease-in-out;
+    opacity: 1;
 
     &:active {
         opacity: 0.5;

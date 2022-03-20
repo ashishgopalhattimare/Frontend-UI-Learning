@@ -56,6 +56,9 @@ button, .button {
   background-image: linear-gradient(to right, #31d35c, #2bb7da);
   color: white;
   font-weight: 400;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 1;
 }
 
 button:active, .button:active {
@@ -77,6 +80,7 @@ button:active, .button:active {
 .header nav {
   padding: 1.0625rem 1.5rem;
   border: 1px black dotted;
+  height: 2.5rem;
 }
 
 .header__menu > span {
