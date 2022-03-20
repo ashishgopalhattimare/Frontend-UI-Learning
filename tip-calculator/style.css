@@ -1,0 +1,196 @@
+body {
+    font-size: 15px;
+    height: 100vh;
+    color: #959eac;
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.color {
+    background-color: hsl(172, 67%, 45%);
+    background-color: hsl(183, 100%, 15%);
+    background-color: hsl(186, 14%, 43%);
+    background-color: hsl(184, 14%, 56%);
+    background-color: hsl(185, 41%, 84%);
+    background-color: hsl(189, 41%, 97%);
+    background-color: hsl(0, 0%, 100%);
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.card {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    width: 600px;
+    padding: 25px 25px;
+
+    display: grid;
+    grid-template-areas: 'main main';
+    gap: 10px;
+}
+.content-left {
+    grid-area: 'main';
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+.content-right {
+    grid-area: 'main';
+    border-radius: 20px;
+    padding: 25px 25px;
+
+    background-color: hsl(183, 100%, 15%);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-areas: 'main main main';
+    gap: 10px;
+}
+.tip-button {
+    grid-area: 'main';
+    background-color: hsl(183, 100%, 15%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 5px;
+    color: hsl(0, 0%, 100%);
+}
+#custom-tip-button {
+    background-color: hsl(189, 41%, 97%);
+    color: hsl(183, 100%, 15%);
+}
+.tip-button:active, .tip-button:hover {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+}
+
+.input-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dollar-icon {
+    background: url("assets/icon-dollar.svg") no-repeat left;
+    background-size: 10px;
+    background-position: 10px;
+    padding: 8px 8px 8px 24px;
+    text-align: right;
+}
+.person-icon {
+    background: url("assets/icon-person.svg") no-repeat left;
+    background-size: 10px;
+    background-position: 10px;
+    padding: 8px 8px 8px 24px;
+    text-align: right;
+}
+input {
+    background-color: hsl(189, 41%, 97%);
+    width: revert;
+    border-radius: 5px;
+    height: 25px;
+    font-size: 1rem;
+    padding: 8px 8px;
+    border: 0 solid hsl(189, 41%, 97%);
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+}
+input:focus {
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+
+.tip-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.tip-details > .label {
+    display: flex;
+    flex-direction: column;
+}
+#tipAmountPerPerson, #totalAmountPerPerson {
+    color: hsl(172, 67%, 45%);
+    font-size: 1.7rem;
+}
+
+.circle-content {
+    width: 45px;
+    height: 45px;
+    background-color: hsl(216, 11%, 27%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* GENERIC CSS */
+
+button {
+    height: 40px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 0 solid white;
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+button:hover, button:active {
+    background-color: hsl(172, 67%, 45%);
+    cursor: pointer;
+}
+
+.mb-2 {
+    margin-bottom: 8px;
+}
+.mt-2 {
+    margin-top: 8px;
+}
+.mb-3 {
+    margin-bottom: 16px;
+}
+.mt-3 {
+    margin-top: 16px;
+}
+.mb-4 {
+    margin-bottom: 25px;
+}
+.content-center {
+    display: flex;
+    justify-content: center;
+}
+.text-white {
+    color: white;
+}
+/* INPUT UTILITY */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
