@@ -90,10 +90,6 @@ button:active, .button:active {
   margin-bottom: 3px;
 }
 
-.header__link {
-  border: 1px black dotted;
-}
-
 .header__link > a {
   font-size: 0.875rem;
   color: #9698a6;
