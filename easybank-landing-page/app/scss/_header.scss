@@ -1,6 +1,6 @@
 .header {
     nav {
-        padding: 24px 24px;
+        padding: 1.0625rem 1.5rem;
         border: 1px black dotted;
     }
     &__logo {
@@ -25,10 +25,34 @@
         > a {
             font-size: $font-sm;
             color: $grayishBlue;
+            transition: $color-ease-in-out;
+
+            position: relative;
+
+            &::after {
+                content: "";
+                height:4px;
+                display: block;
+                left: 0;
+                right: 0;
+                bottom: -30px;
+                position: absolute;
+                background: $gradient-green-cyan;
+                opacity: 0;
+                transition: $opacity-ease-in-out;
+            }
 
             &:not(:last-child) {
                 margin-right: 32px;
             }
+            &:hover {
+                color: $darkBlue;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+            
         }
     }
 }

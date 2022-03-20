@@ -43,7 +43,7 @@ button, .button {
     cursor: pointer;
     border: 0;
 
-    background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+    background-image: $gradient-green-cyan;
     color: $white;
     font-weight: 400;
 

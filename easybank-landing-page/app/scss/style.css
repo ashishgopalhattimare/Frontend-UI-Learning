@@ -75,7 +75,7 @@ button:active, .button:active {
 }
 
 .header nav {
-  padding: 24px 24px;
+  padding: 1.0625rem 1.5rem;
   border: 1px black dotted;
 }
 
@@ -97,9 +97,35 @@ button:active, .button:active {
 .header__link > a {
   font-size: 0.875rem;
   color: #9698a6;
+  -webkit-transition: color 200ms ease-in-out;
+  transition: color 200ms ease-in-out;
+  position: relative;
+}
+
+.header__link > a::after {
+  content: "";
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(#31d35c), to(#2bb7da));
+  background: linear-gradient(to right, #31d35c, #2bb7da);
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 }
 
 .header__link > a:not(:last-child) {
   margin-right: 32px;
+}
+
+.header__link > a:hover {
+  color: #2d314d;
+}
+
+.header__link > a:hover::after {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
