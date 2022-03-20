@@ -15,7 +15,12 @@
             width: 26px;
             height: 2px;
             background-color: $darkBlue;
-
+            
+            // Rotate CSS
+            top: 0;
+            position: relative;
+            transition: 300ms ease-in-out;
+            
             &:not(:last-child) {
                 margin-bottom: 5px;
             }
@@ -23,9 +28,8 @@
     }
     &__hamburger {
         &__open {
+            // Rotate CSS
             > span {
-                transition: $rotate-ease-in-out;
-                position: relative;
                 &:nth-child(1) {
                     transform: rotate(45deg);
                     top: 7px;
