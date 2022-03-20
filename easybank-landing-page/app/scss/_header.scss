@@ -17,10 +17,30 @@
             background-color: $darkBlue;
 
             &:not(:last-child) {
-                margin-bottom: 3px;
+                margin-bottom: 5px;
             }
         }
     }
+    &__hamburger {
+        &__open {
+            > span {
+                transition: $rotate-ease-in-out;
+                position: relative;
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 7px;
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top: -7px;
+                }
+            }
+        }
+    }
+
     &__link {
         > a {
             font-size: $font-sm;
