@@ -25,6 +25,10 @@
         > a {
             font-size: $font-sm;
             color: $grayishBlue;
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
         }
     }
 }

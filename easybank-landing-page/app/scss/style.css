@@ -58,6 +58,10 @@ button, .button {
   font-weight: 400;
 }
 
+button:active, .button:active {
+  opacity: 0.5;
+}
+
 @media (max-width: 63.9375em) {
   .hide-for-mobile {
     display: none;
@@ -93,5 +97,9 @@ button, .button {
 .header__link > a {
   font-size: 0.875rem;
   color: #9698a6;
+}
+
+.header__link > a:not(:last-child) {
+  margin-right: 32px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -46,6 +46,10 @@ button, .button {
     background-image: linear-gradient(to right, $limeGreen, $brightCyan);
     color: $white;
     font-weight: 400;
+
+    &:active {
+        opacity: 0.5;
+    }
 }
 
 // Visibility
