@@ -100,4 +100,6 @@ function resetForm() {
     splitter.reset();
     setInputValue(billInput$, '');
     setInputValue(peopleInput$, '');
+
+    calculateBill(0,0,0);
 }
