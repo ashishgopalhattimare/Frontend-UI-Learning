@@ -32,3 +32,7 @@ $fade-in-animation: fade-in 300ms ease-in-out forwards;
 .fade-out {
     animation: $fade-out-animation;
 }
+
+.has-fade {
+    visibility: hidden;
+}

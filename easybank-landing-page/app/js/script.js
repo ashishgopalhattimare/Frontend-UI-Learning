@@ -2,19 +2,30 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('loaded');
 });
 
+const FADE_CLASSES = {
+    hasFade: 'has-fade',
+    fadeIn: 'fade-in',
+    fadeOut: 'fade-out'
+};
+
+const hasFadeOverlayList = document.querySelectorAll(`.${FADE_CLASSES.hasFade}`);
+const overlay$ = hasFadeOverlayList[0];
 const header$ = $('#header');
-const overlay$ = $('#overlay');
 
 $('#hamburgerButton').on("click", () => {
     header$.toggleClass('header__hamburger__open');
 
-    if (classInClassNameList(overlay$[0], 'fade-in')) {
-        overlay$.removeClass('fade-in');
-        overlay$.addClass('fade-out');
+    if (classInClassNameList(overlay$, 'fade-in')) {
+        hasFadeOverlayList.forEach(x => {
+            x.classList.remove(FADE_CLASSES.fadeIn);
+            x.classList.add(FADE_CLASSES.fadeOut);
+        });
     }
     else {
-        overlay$.removeClass('fade-out');
-        overlay$.addClass('fade-in');
+        hasFadeOverlayList.forEach(x => {
+            x.classList.remove(FADE_CLASSES.fadeOut);
+            x.classList.add(FADE_CLASSES.fadeIn);
+        });
     }
 });
 

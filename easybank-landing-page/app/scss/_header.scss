@@ -1,13 +1,12 @@
 .header {
     nav {
-        padding: 1.0625rem 1.5rem;
         height: 2.5rem;
     }
-    &__menu {
+    &__toggle { // Mobile Hamburger Toggle
         > span {
             display: block;
-            width: 26px;
-            height: 2px;
+            width: 1.625rem;
+            height: 0.125rem;
             background-color: $darkBlue;
             
             // Rotate CSS
@@ -16,12 +15,33 @@
             transition: 300ms ease-in-out;
             
             &:not(:last-child) {
-                margin-bottom: 5px;
+                margin-bottom: 0.3125rem;
             }
         }
     }
+    &__menu { // Mobile Overlay Menu Option
+        padding: 0.9375rem 0.9375rem;
+        border-radius: 0.3125rem;
+        background-color: $white;
+        margin-bottom: 0;
+
+        // Position the overlay menu on the center at absolute position
+        position: absolute;
+        width: calc(100% - 4.5rem);
+
+        // Center the content
+        right: 50%; // move the content left by 50%
+        transform: translateX(50%); // shift the content right by 50%
+
+        > a {
+            display: block;
+            padding: 0.625rem 0.625rem;
+            color: $darkBlue;
+            text-align: center;
+        }
+    }
     &__hamburger__open {
-        .overlay {
+        .overlay, .header__menu { // overlay animate to show
             visibility: visible;
         }
 
@@ -30,14 +50,14 @@
             > span {
                 &:nth-child(1) {
                     transform: rotate(45deg);
-                    top: 7px;
+                    top: 0.4375rem;
                 }
                 &:nth-child(2) {
                     opacity: 0;
                 }
                 &:nth-child(3) {
                     transform: rotate(-45deg);
-                    top: -7px;
+                    top: -0.4375rem;
                 }
             }
         }
@@ -53,11 +73,11 @@
 
             &::after {
                 content: "";
-                height:4px;
+                height: 0.25rem;
                 display: block;
                 left: 0;
                 right: 0;
-                bottom: -30px;
+                bottom: -1.875rem;
                 position: absolute;
                 background: $gradient-green-cyan;
                 opacity: 0;
@@ -65,7 +85,7 @@
             }
 
             &:not(:last-child) {
-                margin-right: 32px;
+                margin-right: 2rem;
             }
             &:hover {
                 color: $darkBlue;
@@ -87,5 +107,4 @@
     bottom: 0rem;
 
     background-image: $gradient-nav-overlay;
-    visibility: hidden;
 }
