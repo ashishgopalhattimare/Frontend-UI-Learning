@@ -3,6 +3,7 @@
         height: 2.5rem;
         position: relative;
         background-color: $white;
+        z-index: 99;
     }
     &__toggle { // Mobile Hamburger Toggle
         > span {
@@ -45,6 +46,7 @@
     &__hamburger__open {
         .overlay, .header__menu { // overlay animate to show
             visibility: visible;
+            z-index: 99;
         }
 
         .header__menu {
