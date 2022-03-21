@@ -15,6 +15,10 @@ body {
     font-size: $font-md;
     font-weight: 300;
     color: $grayishBlue;
+
+    &.no-scroll {
+        position: fixed;
+    }
 }
 
 // Anchor Tag CSS

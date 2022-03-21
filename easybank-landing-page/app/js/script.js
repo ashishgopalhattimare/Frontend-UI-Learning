@@ -32,15 +32,15 @@ function openCloseOverlayMenu() {
             x.classList.add(FADE_CLASSES.fadeOut);
         });
 
-        body$.style.position = 'unset'; // Enable body scrolling
+        body$.classList.remove('no-scroll');  // Enable body scrolling
     }
     else {
         hasFadeOverlayList.forEach(x => { // open the overlay
             x.classList.remove(FADE_CLASSES.fadeOut);
             x.classList.add(FADE_CLASSES.fadeIn);
         });
-
-        body$.style.position = 'fixed'; // Disable body scrolling
+        
+        body$.classList.add('no-scroll'); // Disable body scrolling
     }
 }
 
