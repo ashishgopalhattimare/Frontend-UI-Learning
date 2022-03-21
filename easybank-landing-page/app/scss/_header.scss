@@ -22,8 +22,7 @@
     }
     &__hamburger__open {
         .overlay {
-            display: block;
-            animation: $fade-in-animation;
+            visibility: visible;
         }
 
         .header__menu {
@@ -87,10 +86,6 @@
     left: 0rem;
     bottom: 0rem;
 
-    background-color: $darkBlue;
     background-image: $gradient-nav-overlay;
-
-
-    display: none;
-    animation: $fade-in-animation;
+    visibility: hidden;
 }
