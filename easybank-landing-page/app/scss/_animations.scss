@@ -23,12 +23,16 @@
     }
 }
 
-$fade-out-animation: fade-out 300ms ease-in-out forwards;
-$fade-in-animation: fade-in 300ms ease-in-out forwards;
+$fade-out-animation: fade-out 200ms ease-in-out forwards;
+$fade-in-animation: fade-in 200ms ease-in-out forwards;
 
 .fade-in {
     animation: $fade-in-animation;
 }
 .fade-out {
     animation: $fade-out-animation;
+}
+
+.has-fade {
+    visibility: hidden;
 }
