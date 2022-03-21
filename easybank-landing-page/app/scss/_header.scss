@@ -1,13 +1,7 @@
 .header {
     nav {
         padding: 1.0625rem 1.5rem;
-        border: 1px black dotted;
         height: 2.5rem;
-    }
-    &__logo {
-        img {
-
-        }
     }
     &__menu {
         > span {
@@ -15,12 +9,40 @@
             width: 26px;
             height: 2px;
             background-color: $darkBlue;
-
+            
+            // Rotate CSS
+            top: 0;
+            position: relative;
+            transition: 300ms ease-in-out;
+            
             &:not(:last-child) {
-                margin-bottom: 3px;
+                margin-bottom: 5px;
             }
         }
     }
+    &__hamburger__open {
+        .overlay {
+            visibility: visible;
+        }
+
+        .header__menu {
+            // Rotate CSS
+            > span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 7px;
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top: -7px;
+                }
+            }
+        }
+    }
+
     &__link {
         > a {
             font-size: $font-sm;
@@ -55,4 +77,15 @@
             
         }
     }
+}
+
+.overlay {
+    position: fixed;
+    top: 4.75rem;
+    right: 0rem;
+    left: 0rem;
+    bottom: 0rem;
+
+    background-image: $gradient-nav-overlay;
+    visibility: hidden;
 }

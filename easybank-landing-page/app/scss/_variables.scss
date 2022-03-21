@@ -2,6 +2,7 @@
 
 // Primary
 $darkBlue: hsl(233, 26%, 24%);
+$darbBlue-70: rgba(35, 42, 97, 0.70);
 $limeGreen: hsl(136, 65%, 51%);
 $brightCyan: hsl(192, 70%, 51%);
 
@@ -18,6 +19,8 @@ $font-md: 1.125rem; // 18px
 // Transitions
 $color-ease-in-out: color 200ms ease-in-out;
 $opacity-ease-in-out: opacity 200ms ease-in-out;
+$rotate-ease-in-out: 200ms ease-in-out;
 
 // Gradient
 $gradient-green-cyan: linear-gradient(to right, $limeGreen, $brightCyan);
+$gradient-nav-overlay: linear-gradient(to bottom, $darbBlue-70, $white);
