@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('loaded');
 });
 
-const hamburgerButton$ = $('#hamburgerButton');
+const header$ = $('#header');
 
-hamburgerButton$.on("click", () => {
-    hamburgerButton$.toggleClass('header__hamburger__open');
+$('#hamburgerButton').on("click", () => {
+    header$.toggleClass('header__hamburger__open');
 })

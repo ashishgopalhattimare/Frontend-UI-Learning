@@ -1,17 +1,4 @@
 .header {
-
-    .overlay {
-        position: fixed;
-        top: 4.75rem;
-        right: 0rem;
-        left: 0rem;
-        bottom: 0rem;
-    
-        background-color: $darkBlue;
-        background-image: $gradient-nav-overlay;
-        opacity: 0.80;
-    }
-
     nav {
         padding: 1.0625rem 1.5rem;
         height: 2.5rem;
@@ -38,8 +25,13 @@
             }
         }
     }
-    &__hamburger {
-        &__open {
+    &__hamburger__open {
+        .overlay {
+            display: block;
+            animation: fade-in 300ms ease-in-out forwards;
+        }
+
+        .header__menu {
             // Rotate CSS
             > span {
                 &:nth-child(1) {
@@ -91,4 +83,16 @@
             
         }
     }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 4.75rem;
+    right: 0rem;
+    left: 0rem;
+    bottom: 0rem;
+
+    background-color: $darkBlue;
+    background-image: $gradient-nav-overlay;
 }
