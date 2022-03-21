@@ -14,3 +14,10 @@ $white: hsl(0, 0%, 100%);
 // Font size
 $font-sm: 0.875rem; // 14px
 $font-md: 1.125rem; // 18px
+
+// Transitions
+$color-ease-in-out: color 200ms ease-in-out;
+$opacity-ease-in-out: opacity 200ms ease-in-out;
+
+// Gradient
+$gradient-green-cyan: linear-gradient(to right, $limeGreen, $brightCyan);
