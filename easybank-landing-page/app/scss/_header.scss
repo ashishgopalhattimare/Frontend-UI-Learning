@@ -1,6 +1,8 @@
 .header {
     nav {
         height: 2.5rem;
+        position: relative;
+        background-color: $white;
     }
     &__toggle { // Mobile Hamburger Toggle
         > span {
@@ -101,7 +103,7 @@
 
 .overlay {
     position: fixed;
-    top: 4.75rem;
+    top: 0;
     right: 0rem;
     left: 0rem;
     bottom: 0rem;
