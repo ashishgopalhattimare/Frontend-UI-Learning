@@ -8,6 +8,7 @@ const FADE_CLASSES = {
     fadeOut: 'fade-out'
 };
 
+const body$ = document.getElementById('body');
 const hasFadeOverlayList = document.querySelectorAll(`.${FADE_CLASSES.hasFade}`);
 const overlay$ = hasFadeOverlayList[0];
 const header$ = $('#header');
@@ -30,12 +31,18 @@ function openCloseOverlayMenu() {
             x.classList.remove(FADE_CLASSES.fadeIn);
             x.classList.add(FADE_CLASSES.fadeOut);
         });
+
+        // Enable body scrolling
+        body$.style.position = 'unset';
     }
     else {
-        hasFadeOverlayList.forEach(x => {
+        hasFadeOverlayList.forEach(x => { // open the overlay
             x.classList.remove(FADE_CLASSES.fadeOut);
             x.classList.add(FADE_CLASSES.fadeIn);
         });
+
+        // Disable body scrolling
+        body$.style.position = 'fixed';
     }
 }
 
