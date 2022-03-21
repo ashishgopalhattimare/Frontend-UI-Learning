@@ -12,7 +12,17 @@ const hasFadeOverlayList = document.querySelectorAll(`.${FADE_CLASSES.hasFade}`)
 const overlay$ = hasFadeOverlayList[0];
 const header$ = $('#header');
 
+const headerMenuItemList = document.querySelectorAll('.header__menu > .menu-item');
+
 $('#hamburgerButton').on("click", () => {
+    openCloseOverlayMenu();
+});
+
+function classInClassNameList(object, property) {
+    return object.classList.contains(property);
+}
+
+function openCloseOverlayMenu() {
     header$.toggleClass('header__hamburger__open');
 
     if (classInClassNameList(overlay$, 'fade-in')) {
@@ -27,8 +37,12 @@ $('#hamburgerButton').on("click", () => {
             x.classList.add(FADE_CLASSES.fadeIn);
         });
     }
-});
-
-function classInClassNameList(object, property) {
-    return object.classList.contains(property);
 }
+
+// Button Event handling
+headerMenuItemList.forEach(menuButton => {
+    menuButton.addEventListener('click', _ => {
+        console.log('menu item clicked');
+        openCloseOverlayMenu();
+    });
+})
