@@ -32,8 +32,7 @@ function openCloseOverlayMenu() {
             x.classList.add(FADE_CLASSES.fadeOut);
         });
 
-        // Enable body scrolling
-        body$.style.position = 'unset';
+        body$.style.position = 'unset'; // Enable body scrolling
     }
     else {
         hasFadeOverlayList.forEach(x => { // open the overlay
@@ -41,8 +40,7 @@ function openCloseOverlayMenu() {
             x.classList.add(FADE_CLASSES.fadeIn);
         });
 
-        // Disable body scrolling
-        body$.style.position = 'fixed';
+        body$.style.position = 'fixed'; // Disable body scrolling
     }
 }
 
