@@ -98,3 +98,11 @@ button, .button {
         display: none;
     }
 }
+
+// PAGE BOTTOM-TOP SPACE CONTAINER
+.page-end, .page-start, .page-space {
+    display: block;
+    width: 100%;
+    height: 3.75rem;
+    // border: 1px red dotted;
+}
