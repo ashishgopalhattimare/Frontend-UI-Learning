@@ -26,6 +26,10 @@ a, a:visited, a:hover, a:active {
 }
 
 // Spacing
+.fixed-container {
+    max-width: 70rem;
+    margin: auto;
+}
 .container {
     padding: 1.0625rem 1.5rem;
     max-width: 70rem;

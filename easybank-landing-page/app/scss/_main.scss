@@ -24,11 +24,12 @@
 
             @include breakpoint-up(large) {
                 height: 125%;
+                left: 6.25rem;
             }
         }
 
         @include breakpoint-up(medium) {
-            flex:3;
+            flex: 3;
             background-image: url('../../images/bg-intro-desktop.svg');
             height: 100%;
         }
