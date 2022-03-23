@@ -17,17 +17,16 @@
             height: 28.125rem;
             border-radius: .3125rem;
             max-width: 25rem;
+            box-shadow: 0px 1px 12px rgba(0,0,0,0.10);
             
             > .article {
                 &__icon {
-                    > img {
-                        max-height: 13.75rem;
-                        width: 100%;
-                        height: auto;
+                    height: 12.75rem;
+                    width: 100%;
+                    display: block;
 
-                        @include breakpoint-up(large) {
-                            height: 9.375rem;
-                        }
+                    @include breakpoint-up(large) {
+                        height: 9.375rem;
                     }
                     margin-bottom: .625rem;
                 }
