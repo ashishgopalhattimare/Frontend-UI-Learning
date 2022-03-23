@@ -1,0 +1,41 @@
+.page_2 {
+    background-color: $lightGrayishBlue;
+    &__text {
+        text-align: center;
+        > h2 {
+            color: $darkBlue;
+            font-weight: 400;
+            @include breakpoint-up(large) {
+                font-size: $font-lg;
+            }
+            margin: 0;
+        }
+    }
+    .use-case-list {
+        list-style: none;
+        padding: 0 0;
+
+        > .use-case-item {
+            > .use-case-icon {
+                display: inline-block;
+                margin-bottom: .625rem;
+                > img {
+                    width: 4.0625rem;
+                }
+            }
+            &:not(:last-child) > .paragraph {
+                margin-bottom: 1.875rem;
+            }
+            @include breakpoint-up(large) {
+                text-align: left;
+                height: 100%;
+            }
+        }
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-areas: 'x x x x';
+            grid-auto-columns: 1fr;
+            gap: .625rem;
+        }
+    }
+}
