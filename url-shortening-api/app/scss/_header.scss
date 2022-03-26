@@ -7,7 +7,7 @@
         .header__toggle > span {
             &:nth-child(1) {
                 transform: rotate(45deg);
-                top: .4375rem;
+                top: .5rem;
             }
             &:nth-child(2) {
                 transform: rotate(45deg);
@@ -15,7 +15,7 @@
             }
             &:nth-child(3) {
                 transform: rotate(-45deg);
-                top: -.4375rem;
+                top: -.5rem;
             }
         }
     }
@@ -75,19 +75,24 @@
             }
         }
     }
-    & &__toggle > span {
-        display: block;
-        width: 1.625rem;
-        height: 0.125rem;
-        background-color: black;
+    &__toggle {
+        &:hover > span {
+            background-color: $veryDarkViolet;
+        }
+        > span {
+            display: block;
+            width: 1.625rem;
+            height: .1875rem;
+            background-color: $grayishViolet;
 
-        // Rotate CSS
-        top: 0;
-        position: relative;
-        transition: 300ms ease-in-out;
+            // Rotate CSS
+            top: 0;
+            position: relative;
+            transition: 300ms ease-in-out;
 
-        &:not(:first-child) {
-            margin-top: .3125rem;
+            &:not(:first-child) {
+                margin-top: .3125rem;
+            }
         }
     }
 }
