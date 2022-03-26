@@ -1,0 +1,32 @@
+// Colors
+
+// Primary
+$darkBlue: hsl(233, 26%, 24%);
+$darbBlue-fade: rgba(35, 42, 97, 0.85);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+
+// Neutral
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// Font size
+$font-xs: .8rem; // 11px
+$font-sm: 0.875rem; // 14px
+$font-md: 1.125rem; // 18px
+$font-lg: 1.40rem; // 40px
+$font-xl: 2.5rem; // 40px
+
+// Paragraph
+$p-sm-ling-height: 1.5;
+
+// Transitions
+$color-ease-in-out: color 200ms ease-in-out;
+$opacity-ease-in-out: opacity 200ms ease-in-out;
+$rotate-ease-in-out: 200ms ease-in-out;
+
+// Gradient
+$gradient-green-cyan: linear-gradient(to right, $limeGreen, $brightCyan);
+$gradient-nav-overlay: linear-gradient(to bottom, $darbBlue-fade, $white);

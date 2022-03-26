@@ -1,0 +1,112 @@
+html {
+    font-size: 100%; // control zoom level at the browser
+    box-sizing: border-box; // include padding in the final width
+}
+
+*, *::before, **::after {
+    box-sizing: inherit;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    line-height: 1.3;
+    font-size: $font-md;
+    font-weight: 300;
+
+    &.no-scroll {
+        position: fixed;
+    }
+}
+
+// Anchor Tag CSS
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+// Spacing
+.fixed-container {
+    max-width: 70rem;
+    margin: auto;
+}
+.container {
+    padding: 1.0625rem 1.5rem;
+    max-width: 70rem;
+    margin: auto;
+}
+.container-p-row {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+.container-p-col {
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+}
+.container-m-row-1dot5 {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+.container-m-col-1dot5 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.container-m-full-1dot5 {
+    margin: 1.5rem 1.5rem;
+}
+
+// Flexbox Styles
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+    &-col {
+        flex-direction: column;
+    }
+}
+
+// Button Styles
+button, .button {
+    padding: 1rem 1.875rem; // 16px 30px
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+
+    background-image: $gradient-green-cyan;
+    color: $white;
+    font-weight: 400;
+    transition: $opacity-ease-in-out;
+    opacity: 1;
+
+    &:active {
+        opacity: 0.5;
+    }
+}
+
+// Visibility
+.hide-for-mobile {
+    // hide for tablet and mobile devices
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+.hide-for-desktop {
+    // hide for desktop viewport width
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+// PAGE BOTTOM-TOP SPACE CONTAINER
+.page-end, .page-start, .page-space {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+}
