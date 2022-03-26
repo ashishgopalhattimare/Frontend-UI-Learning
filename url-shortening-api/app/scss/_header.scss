@@ -1,0 +1,86 @@
+.header {
+    &__hamburger__open {
+        .overlay, .header__menu {
+            visibility: visible;
+            z-index: 99;
+        }
+        .header__toggle > span {
+            &:nth-child(1) {
+                transform: rotate(45deg);
+                top: .4375rem;
+            }
+            &:nth-child(2) {
+                transform: rotate(45deg);
+                top: 0;
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg);
+                top: -.4375rem;
+            }
+        }
+    }
+    &__menu {
+        padding: 1.25rem 1.25rem;
+        background-color: gray;
+        border-radius: .625rem;
+        font-weight: bold;
+
+        // Position the overlay menu on the center at absolute position
+        position: absolute;
+        width: calc(100% - 4.5rem);
+
+        // Center the content
+        right: 50%; // move the content left by 50%
+        transform: translateX(50%); // shift the content right by 50%        
+
+        > a {
+            display: block;
+            padding: 0.625rem 0.625rem;
+            // color: $darkBlue;
+            text-align: center;
+        }
+        :not(:first-child) {
+            margin-top: .8125rem;
+        }
+        .breaker {
+            display: block;
+            // margin: 1.25rem 0;
+
+            background-color: $white;
+            height: .0625rem;
+            width: 100%;
+        }
+    }
+    > nav {
+        border: 1px black solid;
+        height: 2.5rem;
+        position: relative;
+        z-index: 99;
+    }
+    & &__toggle > span {
+        display: block;
+        width: 1.625rem;
+        height: 0.125rem;
+        background-color: black;
+
+        // Rotate CSS
+        top: 0;
+        position: relative;
+        transition: 300ms ease-in-out;
+
+        &:not(:first-child) {
+            margin-top: .3125rem;
+        }
+    }
+}
+
+// OVERLAY CSS
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0rem;
+    left: 0rem;
+    bottom: 0rem;
+
+    // background-image: $gradient-nav-overlay;
+}

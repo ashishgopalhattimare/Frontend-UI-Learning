@@ -80,7 +80,8 @@ button, .button {
     border: 0;
     
     color: $white;
-    font-weight: 400;
+    font-size: $font-md;
+    font-weight: bold;
     transition: $opacity-ease-in-out;
     opacity: 1;
 
