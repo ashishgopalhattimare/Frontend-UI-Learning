@@ -23,7 +23,6 @@
         padding: 1.25rem 1.25rem;
         background-color: $darkViolet;
         border-radius: .625rem;
-        font-weight: bold;
 
         // Position the overlay menu on the center at absolute position
         position: absolute;
@@ -33,29 +32,48 @@
         right: 50%; // move the content left by 50%
         transform: translateX(50%); // shift the content right by 50%        
 
-        > a {
+        > a.menu-item {
             display: block;
             padding: 0.625rem 0.625rem;
             color: $white;
             text-align: center;
+            font-weight: bold;
         }
         :not(:first-child) {
             margin-top: .8125rem;
         }
         .breaker {
             display: block;
-            // margin: 1.25rem 0;
-
             background-color: $grayishViolet;
             height: .0625rem;
             width: 100%;
         }
     }
-    > nav {
-        border: 1px black solid;
-        height: 2.5rem;
+    &__logo {
+        position: relative;
+        top: .3125rem;
+        @include breakpoint-up(large) {
+            margin-right: 1.875rem;
+        }
+    }
+    > .nav {
+        height: 3.4375rem;
         position: relative;
         z-index: 99;
+        > .nav__right > :not(:first-child) {
+            margin-left: 2.5rem;
+            cursor: pointer;
+        }
+        > .nav__right, > .nav__left {
+            > span > *.menu-item {
+                margin-right: 1.5625rem;
+                color: $grayishViolet;
+                font-weight: bold;
+                &:hover {
+                    color: $veryDarkViolet;
+                }
+            }
+        }
     }
     & &__toggle > span {
         display: block;

@@ -23,29 +23,42 @@
 <body id="body">
 
   <header class="header" id="header">
-    <div class="overlay has-fade hide-for-desktop" id="overlay"></div>
+    <div class="overlay has-fade" id="overlay"></div>
     <nav class="nav flex flex-jc-sb flex-ai-c container">
-      <a href="#" class="header__logo">
-        <img src="./images/logo.svg" alt="shortly">
-      </a>
-      <a id="hambugerButton" href="#" class="header__toggle hide-for-desktop">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
+      <div class="nav__left flex flex-row flex-ai-c">
+        <a href="#" class="header__logo">
+          <img src="./images/logo.svg" alt="shortly">
+        </a>
+        <span class="hide-for-mobile">
+          <a href="#" class="menu-item">Features</a>
+          <a href="#" class="menu-item">Pricing</a>
+          <a href="#" class="menu-item">Resources</a>
+        </span>
+      </div>
+      <div class="nav__right flex flex-row flex-ai-c">
+        <a id="hambugerButton" href="#" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+        <span class="hide-for-mobile">
+          <a href="#" class="menu-item">Login</a>
+          <button class="hide-for-mobile">Sign Up</button>
+        </span>
+      </div>
     </nav>
 
-    <section class="header__menu has-fade flex flex-col flex-ai-c hide-for-desktop">
+    <section class="header__menu has-fade flex flex-col flex-ai-c">
       <a href="#" class="menu-item">Features</a>
       <a href="#" class="menu-item">Pricing</a>
       <a href="#" class="menu-item">Resources</a>
       <span class="breaker"></span>
       <a href="#" class="menu-item">Login</a>
-      <button class="primary menu-item">Sign Up</button>
+      <button class="menu-item">Sign Up</button>
     </section>
   </header>
 
-  <main class="flex flex-col">
+  <main class="flex flex-col container-p-row">
     <button class="primary">Sign Up</button>
     <button class="primary">Sign Up</button>
   </main>
