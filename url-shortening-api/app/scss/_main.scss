@@ -9,7 +9,7 @@
         }
         &__content {
             > .title {
-                font-size: $font-xl;
+                font-size: $font-xxl;
                 font-weight: 700;
                 text-align: center;
                 color: $veryDarkViolet;
@@ -38,8 +38,9 @@
             &__content {
                 order: 1;
                 > .title {
-                    font-size: $font-xxl;
+                    text-align: left;
                 }
+                align-items: flex-start;
             }
         }
     }
