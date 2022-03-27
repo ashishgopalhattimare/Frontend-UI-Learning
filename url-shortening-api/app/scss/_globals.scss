@@ -80,7 +80,7 @@ button, .button {
     cursor: pointer;
     border: 0;
     background-color: $cyan;
-    
+    height: 3.75rem;
     color: $white;
     font-size: $font-lg;
     font-weight: bold;
@@ -100,7 +100,7 @@ input {
     background-color: hsl(189, 41%, 97%);
     width: revert;
     border-radius: .3125rem;
-    height: 3.125rem;
+    height: 3.75rem;
     border: 0 solid hsl(189, 41%, 97%);
     font-weight: 700;
     font-size: $font-md;
