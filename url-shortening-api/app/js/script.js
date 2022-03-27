@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('loaded');
+    console.log('loaded script.js');
 });
 
 const FADE_CLASSES = {
