@@ -1,18 +1,20 @@
 setTimeout(() => {
     const shortenButton$ = $('#shortenButton');
     const shortenLink$ = document.getElementById('shortenLink');
+    const shortenHistory$ = document.getElementById('shorten_history');
 
     shortenButton$.click(() => {
         const inputLink = shortenLink$.value;
-        generateShortenUrl(inputLink);
+        generateShortenUrl(inputLink, shortenHistory$);
     });
 }, 2500);
 
-function generateShortenUrl(inputLink) {
+function generateShortenUrl(inputLink, shortenHistory$) {
     fetch(`https://api.shrtco.de/v2/shorten?url=${inputLink}`)
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        shortenHistory$.classList.remove('is-hidden');
     })
     .catch(ex => console.log(ex));
 }
