@@ -45,47 +45,86 @@
         }
     }
 }
-#url-shorten {
-    background-image: url('../../images/bg-shorten-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: 100% 0;
-    background-color: $darkViolet;
-    
-    width: 90%;
-    position: absolute;
-
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-
-    border: 1px solid black;
-    border-radius: .9375rem;
-    box-sizing: border-box;
-
-    > span {
-        padding: 1rem 1rem;
+.url-shorten {
+    #url-shorten {
+        background-image: url('../../images/bg-shorten-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 100% 0;
+        background-color: $darkViolet;
         
-        > button {
-            margin-top: .75rem;
+        width: calc(100% - 3rem);
+        position: absolute;
+    
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    
+        border-radius: .9375rem;
+    
+        > span {
+            padding: 1rem 1rem;
+            > button {
+                margin-top: .75rem;
+            }
+        }
+    
+        @include breakpoint-up(large) {
+            > span {
+                flex-direction: row;
+                > input {
+                    width: 100%;
+                }
+                > button {
+                    min-width: 10.625rem;
+                    margin-left: .75rem;
+                    margin-top: 0;
+                }
+            }
         }
     }
+    .shorten_history {
+        width: 100%;
+        margin: 0 auto;
+        > .breaker {
+            display: block;
+            height: 5.625rem;
+        }
+        &__list {
+            list-style: none;
+            padding: 0 0;
+            margin: 0 0;
+            &_item {
+                padding: 1rem 1rem;
+                min-height: 100px;
+                border-radius: .9375rem;
+                background-color: $white;
+                margin-bottom: 1.25rem;
 
-    @include breakpoint-up(large) {
-        > span {
-            flex-direction: row;
-            > input {
-                width: 100%;
-            }
-            > button {
-                min-width: 10.625rem;
-                margin-left: .75rem;
-                margin-top: 0;
+                > .original-link {
+                    font-size: $font-lg;
+                    padding-bottom: 1rem;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        border: 1px solid $gray;
+                        width: 100%;
+                        bottom: 0;
+                    }
+                }
+                > .shortened-link {
+                    font-size: $font-lg;
+                    padding: 1rem 0;
+                    color: $cyan;
+                }
             }
         }
     }
 }
 #advancedStatistics {
     position: relative;
-    height: 100px;
+    min-height: 100px;
     background-color: $lightGrayishViolet;
 }
