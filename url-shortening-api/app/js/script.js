@@ -18,8 +18,6 @@ const overlay$ = hasFadeOverlayList[0];
 const hambugerButton$ = document.getElementById('hambugerButton');
 const headerMenuItemList = document.querySelectorAll('.header__menu > .menu-item');
 
-console.log(headerMenuItemList);
-
 hambugerButton$.addEventListener('click', () => {
     openCloseOverlayMenu();
 });
