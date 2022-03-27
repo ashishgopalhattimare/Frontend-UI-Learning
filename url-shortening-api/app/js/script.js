@@ -18,9 +18,7 @@ const includeTags = $('include');
 for(let tag of includeTags) {
     const htmlLink = tag.attributes['src'].value;
     
-    fetch(htmlLink, {
-        cache: "no-store"
-    })
+    fetch(htmlLink, { cache: "no-store" })
     .then(response => response.text())
     .then(html => {
         tag.innerHTML = html;
