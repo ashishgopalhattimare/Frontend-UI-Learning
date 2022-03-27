@@ -1,6 +1,6 @@
 #main {
-    border: 1px solid black;
     overflow: hidden;
+    padding-bottom: 7.5rem;
     .main {
         &__icon > img {
             position: relative;
@@ -44,4 +44,48 @@
             }
         }
     }
+}
+#url-shorten {
+    background-image: url('../../images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 100% 0;
+    background-color: $darkViolet;
+    
+    width: 90%;
+    position: absolute;
+
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    border: 1px solid black;
+    border-radius: .9375rem;
+    box-sizing: border-box;
+
+    > span {
+        padding: 1rem 1rem;
+        
+        > button {
+            margin-top: .75rem;
+        }
+    }
+
+    @include breakpoint-up(large) {
+        > span {
+            flex-direction: row;
+            > input {
+                width: 100%;
+            }
+            > button {
+                min-width: 10.625rem;
+                margin-left: .75rem;
+                margin-top: 0;
+            }
+        }
+    }
+}
+#advancedStatistics {
+    position: relative;
+    height: 100px;
+    background-color: $lightGrayishViolet;
 }

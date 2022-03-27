@@ -91,6 +91,31 @@ button, .button {
         opacity: 0.5;
     }
 }
+.border-rounded {
+    border-radius: 8px;
+}
+
+// Input Styles
+input {
+    background-color: hsl(189, 41%, 97%);
+    width: revert;
+    border-radius: .3125rem;
+    height: 3.125rem;
+    border: 0 solid hsl(189, 41%, 97%);
+    font-weight: 700;
+    font-size: $font-md;
+    padding: 0px .75rem;
+    color: $darkViolet;
+}
+input:focus {
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    background-color: hsl(189, 41%, 97%);
+}
+
 
 // Visibility
 .hide-for-mobile {
