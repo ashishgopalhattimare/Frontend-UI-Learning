@@ -14,6 +14,19 @@ const header$ = $('#header');
 const hasFadeOverlayList = document.querySelectorAll(`.${FADE_CLASSES.hasFade}`);
 const overlay$ = hasFadeOverlayList[0];
 
+const includeTags = $('include');
+for(let tag of includeTags) {
+    const htmlLink = tag.attributes['src'].value;
+    
+    fetch(htmlLink, {
+        cache: "no-store"
+    })
+    .then(response => response.text())
+    .then(html => {
+        tag.innerHTML = html;
+    });
+}
+
 // Button
 const hambugerButton$ = document.getElementById('hambugerButton');
 const headerMenuItemList = document.querySelectorAll('.header__menu > .menu-item');
