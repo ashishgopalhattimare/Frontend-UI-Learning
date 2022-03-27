@@ -1,3 +1,21 @@
 #main {
-    border: 1px solid black;
+    overflow: hidden;
+    .main {
+        &__icon {
+            position: relative;
+            left: 6.625rem;
+        }
+        &__title {
+            font-size: $font-xl;
+            font-weight: 700;
+            text-align: center;
+            color: $veryDarkViolet;
+
+            margin-top: 1.875rem;
+        }
+        &__label {
+            font-size: $font-lg;
+            color: $grayishViolet;
+        }
+    }
 }
