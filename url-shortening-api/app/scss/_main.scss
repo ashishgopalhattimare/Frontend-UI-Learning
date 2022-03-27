@@ -1,21 +1,46 @@
 #main {
+    border: 1px solid black;
     overflow: hidden;
     .main {
-        &__icon {
+        &__icon > img {
             position: relative;
+            overflow: hidden;
             left: 6.625rem;
         }
-        &__title {
-            font-size: $font-xl;
-            font-weight: 700;
-            text-align: center;
-            color: $veryDarkViolet;
-
-            margin-top: 1.875rem;
+        &__content {
+            > .title {
+                font-size: $font-xl;
+                font-weight: 700;
+                text-align: center;
+                color: $veryDarkViolet;
+    
+                margin-top: 1.875rem;
+            }
+            > .label {
+                font-size: $font-lg;
+                color: $grayishViolet;
+            }
+            
         }
-        &__label {
-            font-size: $font-lg;
-            color: $grayishViolet;
+    }
+
+    @include breakpoint-up(large) {
+        display: grid;
+        row-gap: 10px;
+        grid-template-columns: 50% 50%;
+        .main {
+            &__icon {
+                > img {
+                    left: 0;
+                }
+                order: 2;
+            }
+            &__content {
+                order: 1;
+                > .title {
+                    font-size: $font-xxl;
+                }
+            }
         }
     }
 }
