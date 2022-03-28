@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="app/scss/style.css">
 </head>
 <body>
-    <div id="main" class="flex flex-col flex-ai-c container-p-row">
+    <section id="main" class="flex flex-col flex-ai-c container-p-row">
         <span class="main__icon">
             <img src="images/illustration-working.svg">
         </span>
@@ -19,8 +19,8 @@
             </p>
             <span><button>Get Started</button></span>
         </div>
-    </div>
-    <div id="advancedStatistics" class="container-p-row">
+    </section>
+    <section id="page2" class="container-p-row">
         <div class="url-shorten">
             <div id="url-shorten">
                 <span class="flex flex-col flex-jc-c">
@@ -28,9 +28,9 @@
                     <button id="shortenButton" class="border-rounded">Shorten It!</button>
                 </span>
             </div>
-            <section id="shorten_history" class="shorten_history flex flex-col is-hidden">
+            <section id="shorten_history" class="shorten_history flex flex-col">
                 <span class="breaker"></span>
-                <ul id="shorten_history__list" class="shorten_history__list flex flex-col flex-jc-c is-hide">
+                <ul id="shorten_history__list" class="shorten_history__list flex flex-col flex-jc-c">
                     <!-- <li class="shorten_history__list_item flex flex-col">
                         <span class="original-link">http://www.google.com</span>
                         <span class="separator"></span>
@@ -40,6 +40,44 @@
                 </ul>
             </section>
         </div>
-    </div>
+
+        <section class="advancedStatistics flex flex-col flex-jc-c flex-ai-c">
+            <span class="title">Advanced Statistics</span>
+            <p class="content">
+                Track how your links are performing across the web with our
+                advanced Statistics dashboard.
+            </p>
+            <ul class="advancedStatistics__list">
+                <li>
+                    <span class="icon"><img src="images/icon-brand-recognition.svg"></span>
+                    <span class="title">Brand Recognition</span>
+                    <p class="content">
+                        Boost your branch recognition with each click. Generics links don't
+                        mean a thing. Branded link help instil confidence in your content.
+                    </p>
+                </li>
+                <li>
+                    <span class="icon"><img src="images/icon-detailed-records.svg"></span>
+                    <span class="title">Detailed Records</span>
+                    <p class="content">
+                        Gain insight into who is clicking your links. Knowing when and where
+                        people engage with your content helps inform better decisions.
+                    </p>
+                </li>
+                <li>
+                    <span class="icon"><img src="images/icon-fully-customizable.svg"></span>
+                    <span class="title">Fully Customizable</span>
+                    <p class="content">
+                        Improve brand awareness and content discoverability through
+                        customizable links, supercharging audience engagement.
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <section id="page3" class="flex flex-col flex-ai-c flex-jc-c">
+        <span class="title">Boost your links today</span>
+        <button>Get Started</button>
+    </section>
 </body>
 </html>

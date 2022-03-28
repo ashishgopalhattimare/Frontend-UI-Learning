@@ -1,4 +1,5 @@
 .header {
+    font-size: $font-lg;
     &__hamburger__open {
         .overlay, .header__menu {
             visibility: visible;
