@@ -29,7 +29,6 @@ function classInClassNameList(object, property) {
 }
 
 function openCloseOverlayMenu() {
-    console.log('trigger overlay');
     header$.toggleClass('header__hamburger__open');
 
     if (classInClassNameList(overlay$, 'fade-in')) {
