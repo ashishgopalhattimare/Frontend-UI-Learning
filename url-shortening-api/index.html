@@ -1,24 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap" rel="stylesheet"> 
 
-        <title>URL Shortening API</title>
-    </head>
+  <link rel="stylesheet" href="app/scss/style.css">
 
-    <body>
-        
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        
-        <!-- Project JavaScript-->
-        <script src="script.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | URL Shortening API Landing Page</title>
 
-    </body>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body id="body" class="fixed-container">
+
+  <header class="header" id="header">
+    <div class="overlay has-fade" id="overlay"></div>
+    <nav class="nav flex flex-jc-sb flex-ai-c container">
+      <div class="nav__left flex flex-row flex-ai-c">
+        <a href="#" class="header__logo">
+          <img src="./images/logo.svg" alt="shortly">
+        </a>
+        <span class="hide-for-mobile">
+          <a href="#" class="menu-item">Features</a>
+          <a href="#" class="menu-item">Pricing</a>
+          <a href="#" class="menu-item">Resources</a>
+        </span>
+      </div>
+      <div class="nav__right flex flex-row flex-ai-c">
+        <a id="hambugerButton" href="#" class="header__toggle hide-for-desktop">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+        <span class="hide-for-mobile">
+          <a href="#" class="menu-item">Login</a>
+          <button class="hide-for-mobile">Sign Up</button>
+        </span>
+      </div>
+    </nav>
+
+    <section class="header__menu has-fade flex flex-col flex-ai-c">
+      <a href="#" class="menu-item">Features</a>
+      <a href="#" class="menu-item">Pricing</a>
+      <a href="#" class="menu-item">Resources</a>
+      <span class="breaker"></span>
+      <a href="#" class="menu-item">Login</a>
+      <button class="menu-item">Sign Up</button>
+    </section>
+  </header>
+
+  <main class="flex flex-col">
+    <include src="./app/html/main.html"></include>
+    <script src="./app/js/main.js"></script>
+  </main>
+
+  <footer class="footer flex flex-col flex-ai-c">
+  </footer>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Ashish Gopal Hattimare</a>.
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="./app/js/script.js"></script>
+</body>
 </html>

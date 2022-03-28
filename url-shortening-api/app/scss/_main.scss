@@ -1,0 +1,233 @@
+#main {
+    overflow: hidden;
+    padding-bottom: 7.5rem;
+    .main {
+        &__icon > img {
+            position: relative;
+            overflow: hidden;
+            left: 6.625rem;
+        }
+        &__content {
+            > .title {
+                font-size: $font-xxl;
+                font-weight: 700;
+                text-align: center;
+                color: $veryDarkViolet;
+    
+                margin-top: 1.875rem;
+            }
+            > .label {
+                font-size: $font-lg;
+                color: $grayishViolet;
+            }
+            
+        }
+    }
+
+    @include breakpoint-up(large) {
+        display: grid;
+        row-gap: 10px;
+        grid-template-columns: 50% 50%;
+        .main {
+            &__icon {
+                > img {
+                    left: 0;
+                }
+                order: 2;
+            }
+            &__content {
+                order: 1;
+                > .title {
+                    text-align: left;
+                }
+                align-items: flex-start;
+            }
+        }
+    }
+}
+.url-shorten {
+    #url-shorten {
+        background-image: url('../../images/bg-shorten-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: 100% 0;
+        background-color: $darkViolet;
+        
+        width: calc(100% - 3rem);
+        position: absolute;
+    
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    
+        border-radius: .625rem;
+    
+        > span {
+            padding: 1rem 1rem;
+            > button {
+                margin-top: .75rem;
+            }
+        }
+    
+        @include breakpoint-up(large) {
+            padding: 27px 27px;
+            width: calc(100% - 6.25rem);
+            > span {
+                flex-direction: row;
+                > input {
+                    width: 100%;
+                }
+                > button {
+                    min-width: 11.625rem;
+                    margin-left: .75rem;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    .is-hidden {
+        display: none;
+    }
+    .shorten_history {
+        width: 100%;
+        margin: 0 auto;
+        > .breaker {
+            display: block;
+            height: 6.25rem;
+        }
+        &__list {
+            list-style: none;
+            padding: 0 0;
+            margin: 0 0;
+            &_item {
+                padding: 1rem 1rem;
+                border-radius: .625rem;
+                background-color: $white;
+                margin-bottom: 1.25rem;
+
+                > .original-link {
+                    font-size: $font-lg;
+                    padding-bottom: 1rem;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        border: 1px solid $gray;
+                        width: 100%;
+                        bottom: 0;
+                    }
+                }
+                > .shortened-link {
+                    font-size: $font-lg;
+                    padding: 1rem 0;
+                    color: $cyan;
+                }
+
+                @include breakpoint-up(large) {
+                    display: row;
+                    flex-direction: row;
+                    > .separator {
+                        display: none;
+                    }
+                    > .original-link {
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 0;
+                        margin-right: auto;
+                        &::after {
+                            content: "";
+                            border: 0;
+                        }
+                    }
+                    > .shortened-link {
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+#page2 {
+    position: relative;
+    min-height: 100px;
+    background-color: $lightGrayishViolet;
+}
+.advancedStatistics {
+    padding-top: 90px;
+    font-size: $font-lg;
+    > .title {
+        color: $darkViolet;
+        font-size: $font-xl;
+        font-weight: 700;
+    }
+    > .content {
+        color: $grayishViolet;
+        text-align: center;
+    }
+
+    & > &__list {
+        list-style: none;
+        padding: 0 0;
+        margin: 0 0;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 6.25rem;
+
+        @include breakpoint-up(large) {
+            display: grid;
+            grid-template-areas: 'x x x';
+            grid-auto-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        > li {
+            display: flex;
+            flex-direction: column;
+            background-color: $white;
+            border-radius: .625rem;
+            padding: 20px 20px;
+            
+            margin-bottom: 20px;
+            > .icon {
+                position: relative;
+                > img {
+                    background-color: $darkViolet;
+                    border-radius: .625rem;
+                    padding: 10px 10px;
+                    height: 60px;
+                }
+            }            
+            > .title {
+                margin-top: .9375rem;
+                color: $darkViolet;
+                font-size: $font-mlg;
+                font-weight: 700;
+            }
+            > .content {
+                color: $grayishViolet;
+                text-align: center;
+            }
+        }
+    }
+}
+#page3 {
+    height: 18.75rem;
+    background-color: $darkViolet;
+    background-image: url('../../images/bg-boost-mobile.svg');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    @include breakpoint-up(large) {
+        background-image: url('../../images/bg-boost-desktop.svg');
+        height: 15.625rem;
+    }
+
+    > .title {
+        font-weight: 700;
+        color: $white;
+        font-size: $font-xl;
+        margin-bottom: 1.25rem;
+    }
+}
