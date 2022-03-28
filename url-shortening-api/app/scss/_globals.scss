@@ -80,9 +80,9 @@ button, .button {
     cursor: pointer;
     border: 0;
     background-color: $cyan;
-    
+    height: 3.75rem;
     color: $white;
-    font-size: $font-md;
+    font-size: $font-lg;
     font-weight: bold;
     transition: $opacity-ease-in-out;
     opacity: 1;
@@ -91,6 +91,31 @@ button, .button {
         opacity: 0.5;
     }
 }
+.border-rounded {
+    border-radius: 8px;
+}
+
+// Input Styles
+input {
+    background-color: hsl(189, 41%, 97%);
+    width: revert;
+    border-radius: .3125rem;
+    height: 3.75rem;
+    border: 0 solid hsl(189, 41%, 97%);
+    font-weight: 700;
+    font-size: $font-md;
+    padding: 0px .75rem;
+    color: $darkViolet;
+}
+input:focus {
+    outline: 2px solid hsl(172, 67%, 45%);
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    background-color: hsl(189, 41%, 97%);
+}
+
 
 // Visibility
 .hide-for-mobile {

@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="app/scss/style.css">
+</head>
+<body>
+    <div id="main" class="flex flex-col flex-ai-c container-p-row">
+        <span class="main__icon">
+            <img src="images/illustration-working.svg">
+        </span>
+        <div class="main__content flex flex-col flex-ai-c">
+            <span class="title">More than just shorter links</span>
+            <p class="label">
+                Build your brand’s recognition and get detailed insights 
+                on how your links are performing.
+            </p>
+            <span><button>Get Started</button></span>
+        </div>
+    </div>
+    <div id="advancedStatistics" class="container-p-row">
+        <div class="url-shorten">
+            <div id="url-shorten">
+                <span class="flex flex-col flex-jc-c">
+                    <input id="shortenLink" type="text" placeholder="Shorten a link here..." class="border-rounded">
+                    <button id="shortenButton" class="border-rounded">Shorten It!</button>
+                </span>
+            </div>
+            <section id="shorten_history" class="shorten_history flex flex-col is-hidden">
+                <span class="breaker"></span>
+                <ul id="shorten_history__list" class="shorten_history__list flex flex-col flex-jc-c is-hide">
+                    <!-- <li class="shorten_history__list_item flex flex-col">
+                        <span class="original-link">http://www.google.com</span>
+                        <span class="separator"></span>
+                        <span class="shortened-link">https://rel.ink/k123AS</span>
+                        <button class="shorten-copy-btn border-rounded">Copy</button>
+                    </li> -->
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

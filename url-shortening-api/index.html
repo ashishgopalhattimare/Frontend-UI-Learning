@@ -20,7 +20,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body id="body">
+<body id="body" class="fixed-container">
 
   <header class="header" id="header">
     <div class="overlay has-fade" id="overlay"></div>
@@ -58,11 +58,14 @@
     </section>
   </header>
 
-  <main class="flex flex-col container-p-row">
-    <iframe src="./app/html/main.html" seamless></iframe>
+  <main class="flex flex-col">
+    <include src="./app/html/main.html"></include>
+    <script src="./app/js/main.js"></script>
   </main>
 
-  <footer class="footer"></footer>
+  <footer class="footer">
+    Footer
+  </footer>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
