@@ -10,8 +10,7 @@ setTimeout(() => {
     // shortenHistoryList$.appendChild()
 
     shortenButton$.click(() => {
-        const inputLink = shortenLink$.value;
-        generateShortenUrl(inputLink, shortenHistory$, shortenHistoryList$);
+        generateShortenUrl(shortenLink$, shortenHistory$, shortenHistoryList$);
     });
 }, 2500);
 
@@ -28,7 +27,9 @@ function generateShortenListItem(originalLink, shortenLink) {
     return listItem;
 }
 
-function generateShortenUrl(inputLink, shortenHistory$, shortenHistoryList$) {
+function generateShortenUrl(input$, shortenHistory$, shortenHistoryList$) {
+    const inputLink = input$.value;
+
     fetch(`https://api.shrtco.de/v2/shorten?url=${inputLink}`)
     .then(response => response.json())
     .then(x => x.result)
@@ -37,6 +38,7 @@ function generateShortenUrl(inputLink, shortenHistory$, shortenHistoryList$) {
         shortenHistoryList$.appendChild(
             generateShortenListItem(data.original_link, data.share_link)
         );
+        input$.value = '';
     })
     .catch(ex => console.log(ex));
 }
