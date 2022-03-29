@@ -36,7 +36,7 @@
             }
             &__content {
                 order: 1;
-                > .title {
+                > .title, > .label {
                     text-align: left;
                 }
                 align-items: flex-start;
