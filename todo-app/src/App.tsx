@@ -5,7 +5,7 @@ import { Todos } from './components/Todos/Todos';
 function App() {
   return (
     <div className="App">
-      <Header title="TodoList"/>
+      <Header title="TodoList" searchBar={false}/>
       <Todos />
     </div>
   );

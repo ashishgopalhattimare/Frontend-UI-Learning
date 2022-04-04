@@ -1,0 +1,11 @@
+.codelab-search {
+  border: 2px solid black;
+  padding: 10px 16px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.codelab-search:hover {
+  border: 2px solid purple;
+}
+/*# sourceMappingURL=Search.css.map */
