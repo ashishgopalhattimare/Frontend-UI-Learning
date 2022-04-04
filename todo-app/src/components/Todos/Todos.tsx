@@ -1,37 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "../../codexlab/Search/Search";
+import { ITodoItem } from "./models/ITodoItem";
 import TodoItem from "./TodoItem/TodoItem";
 import './Todos.scss';
 
 export const Todos = () => {
 
-    let todoList = [
+    const [todoList, setTodoList] = useState<ITodoItem[]>([
         {
-            sno: 0,
-            title: 'Todo Title 1'
+            isCompleted: false,
+            title: 'Jog around the park 3x'
         },
         {
-            sno: 1,
-            title: 'Todo Title 2'
+            isCompleted: false,
+            title: '10 min meditation'
         }, 
         {
-            sno: 2,
-            title: 'Todo Title 3'
+            isCompleted: true,
+            title: 'Complete Online Javascript Course'
         }
-    ];
+    ]);
  
-    const onDelete = (todo: {
-        sno: number
-    }) => {
-        console.log(todo);
-        todoList.splice(todo.sno, 1);
-        console.log(todoList);
+    // Update the State in a callback function
+    const onDelete = (todo: ITodoItem) => {
+        setTodoList(
+            todoList
+            .filter(x => x !== todo)
+        );
+    }
+    const onTodoItem = (_title: string) => {
+        setTodoList([
+            { isCompleted: false, title: _title },
+            ...todoList
+        ]);
     }
 
-    const todoItemList = todoList.map(todo => <TodoItem key={todo.sno} todo={todo} onDelete={onDelete} />);
+    function reorderCompletedAndProgressTodoList(todoItemList: ITodoItem[]): JSX.Element[] {
+        const completeTodoList = todoItemList
+            .filter(todo => todo.isCompleted)
+            .map((todo, i) => <TodoItem key={`C:${i}`} todo={todo} onDelete={onDelete} isTextStrike={true} />);
+    
+        const progressTodoList = todoItemList
+            .filter(todo => !todo.isCompleted)
+            .map((todo, i) => <TodoItem key={`P:${i}`} todo={todo} onDelete={onDelete} />);
+    
+        return [...completeTodoList, ...progressTodoList];
+    }
+
+    const todoItemList = reorderCompletedAndProgressTodoList(todoList);
     return (
         <div className="container todo flex flex-col flex-ai-c">
-            <Search type="text" />
+            <Search type="text" onSubmit={onTodoItem} />
             <div className="todo__list w-100 border-radius">
                 { todoItemList }
                 <div className="todo__footer flex flex-jc-sb flex-ai-c">
