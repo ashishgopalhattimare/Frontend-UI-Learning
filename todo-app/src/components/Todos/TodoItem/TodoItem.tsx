@@ -4,20 +4,23 @@ import './TodoItem.scss';
 
 const TodoItem = (props: {
     todo: ITodoItem,
-    onDelete: (todo: ITodoItem) => void
-    isTextStrike: boolean;
+    onDelete: (todo: ITodoItem) => void,
+    markCompleted: (todo: ITodoItem) => void,
 }) => {
     const todo = props.todo;
 
     const executeOnDelete = () => {
         props.onDelete(todo);
     }
+    const markCompleted = () => {
+        props.markCompleted(props.todo);
+    }
 
     return (
         <div className="todo-item flex flex-row flex-ai-c flex-jc-sb">
             <div className="flex flex-row flex-ai-c">
-                <div className="radio-button"></div>
-                <span className={`title ${props.isTextStrike ? 'strike-through' : ''}`}>
+                <div className="radio-button" onClick={ markCompleted }></div>
+                <span className={`title ${props.todo.isCompleted ? 'strike-through' : ''}`}>
                     {todo.title}
                 </span>
             </div>
@@ -30,10 +33,6 @@ const TodoItem = (props: {
             {/* <button className="btn btn-sm btn-danger" onClick={ props.onDelete(todo) }>DELETE</button> */}
         </div>
     );
-};
-
-TodoItem.defaultProps = {
-    isTextStrike: false
 };
 
 export default TodoItem;

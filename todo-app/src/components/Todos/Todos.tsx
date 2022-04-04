@@ -14,53 +14,79 @@ export const Todos = () => {
         {
             isCompleted: false,
             title: '10 min meditation'
-        }, 
+        },
         {
-            isCompleted: true,
+            isCompleted: false,
             title: 'Complete Online Javascript Course'
         }
     ]);
  
     // Update the State in a callback function
-    const onDelete = (todo: ITodoItem) => {
+    const deleteTodoItem = (todo: ITodoItem) => {
         setTodoList(
             todoList
             .filter(x => x !== todo)
         );
-    }
-    const onTodoItem = (_title: string) => {
+    };
+    const addTodoItem = (_title: string) => {
         setTodoList([
-            { isCompleted: false, title: _title },
-            ...todoList
+            ...todoList,
+            { isCompleted: false, title: _title }
         ]);
+    };
+    const markCompleted = (todo: ITodoItem) => {
+        todo.isCompleted = true;
+        setTodoList([
+            todo,
+            ...todoList.filter(x => x !== todo)
+        ])
+    }
+    const removeCompletedTodoItems = () => {
+        setTodoList(todoList.filter(x => !x.isCompleted));
     }
 
     function reorderCompletedAndProgressTodoList(todoItemList: ITodoItem[]): JSX.Element[] {
         const completeTodoList = todoItemList
             .filter(todo => todo.isCompleted)
-            .map((todo, i) => <TodoItem key={`C:${i}`} todo={todo} onDelete={onDelete} isTextStrike={true} />);
+            .map((todo, i) => 
+                <TodoItem
+                key={`C:${i}`}
+                todo={todo}
+                onDelete={deleteTodoItem}
+                markCompleted={() => {}}
+                />
+            );
     
         const progressTodoList = todoItemList
             .filter(todo => !todo.isCompleted)
-            .map((todo, i) => <TodoItem key={`P:${i}`} todo={todo} onDelete={onDelete} />);
+            .map((todo, i) => 
+                <TodoItem
+                    key={`P:${i}`}
+                    todo={todo}
+                    onDelete={deleteTodoItem}
+                    markCompleted={markCompleted}
+                />
+            );
     
         return [...completeTodoList, ...progressTodoList];
-    }
+    };
 
     const todoItemList = reorderCompletedAndProgressTodoList(todoList);
     return (
         <div className="container todo flex flex-col flex-ai-c">
-            <Search type="text" onSubmit={onTodoItem} />
+            <Search type="text" onSubmit={addTodoItem} />
             <div className="todo__list w-100 border-radius">
                 { todoItemList }
                 <div className="todo__footer flex flex-jc-sb flex-ai-c">
-                    <span>5 items left</span>
-                    <span className="center">
-                        <span>All</span>
-                        <span>Active</span>
-                        <span>Completed</span>
+                    <span>
+                        { `${ todoList.filter(x => !x.isCompleted).length } items left`}
                     </span>
-                    <span>Clear Completed</span>
+                    <span className="center">
+                        <span className="action-item">All</span>
+                        <span className="action-item">Active</span>
+                        <span className="action-item">Completed</span>
+                    </span>
+                    <span className="action-item" onClick={ removeCompletedTodoItems }>Clear Completed</span>
                 </div>
             </div>
         </div>
