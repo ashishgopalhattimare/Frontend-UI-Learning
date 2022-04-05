@@ -75,20 +75,25 @@ export const Todos = () => {
     return (
         <div className="container todo flex flex-col flex-ai-c">
             <Search type="text" onSubmit={addTodoItem} />
-            <div className="todo__list w-100 border-radius">
+            <div className="todo__list card-shadow w-100 border-radius">
                 { todoItemList }
                 <div className="todo__footer flex flex-jc-sb flex-ai-c">
                     <span>
                         { `${ todoList.filter(x => !x.isCompleted).length } items left`}
                     </span>
-                    <span className="center">
-                        <span className="action-item">All</span>
-                        <span className="action-item">Active</span>
-                        <span className="action-item">Completed</span>
+                    <span className="center footer__center__child">
+                        <span>All</span>
+                        <span>Active</span>
+                        <span>Completed</span>
                     </span>
                     <span className="action-item" onClick={ removeCompletedTodoItems }>Clear Completed</span>
                 </div>
             </div>
+            <span className="todo__footer__center card-shadow footer__center__child border-radius">
+                <span>All</span>
+                <span>Active</span>
+                <span>Completed</span>
+            </span>
         </div>
     );
 };

@@ -17,7 +17,7 @@ const TodoItem = (props: {
     }
 
     return (
-        <div className="todo-item flex flex-row flex-ai-c flex-jc-sb">
+        <div className="todo-item flex flex-row flex-ai-c flex-jc-sb border-radius">
             <div className="flex flex-row flex-ai-c">
                 <div className="radio-button" onClick={ markCompleted }></div>
                 <span className={`title ${props.todo.isCompleted ? 'strike-through' : ''}`}>
