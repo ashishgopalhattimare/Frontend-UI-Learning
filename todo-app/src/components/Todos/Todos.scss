@@ -43,17 +43,22 @@
     }
 }
 
-.footer__center__child {
-    > span {
-        cursor: pointer;
-        &:hover {
-            color: rgb(29, 99, 197);
-        }
-        &:not(:last-child) {
-            margin-right: 10px;
-        }
+.footer__center__child > span {
+    cursor: pointer;
+    &:hover {
+        color: rgb(29, 99, 197);
+    }
+    &:not(:last-child) {
+        margin-right: 10px;
     }
 }
 .card-shadow {
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+.action-item {
+    cursor: pointer;
+    &:hover {
+        color: rgb(29, 99, 197);
+    }
 }
