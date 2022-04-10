@@ -1,0 +1,47 @@
+.todo-item {
+    padding: 10px 16px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    background-color: white;
+    
+    &:not(:last-child) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &:not(:first-child) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .title {
+        font-weight: bold;
+        color: rgb(110, 110, 110);
+    }
+
+    .delete-btn {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.radio-button {
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+    border-radius: 50%;
+
+    border: 1px rgb(208, 208, 208) solid;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px gray solid;
+        background-color: rgb(218, 218, 218);
+    }
+}
+
+.strike-through {
+    text-decoration: line-through;
+    opacity: 0.3;
+}
