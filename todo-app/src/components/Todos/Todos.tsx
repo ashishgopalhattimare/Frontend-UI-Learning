@@ -72,11 +72,16 @@ export const Todos = () => {
     };
 
     const todoItemList = reorderCompletedAndProgressTodoList(todoList);
+    const emptyTodoTempalte = (
+        <div className="emptyTodo flex flex-jc-c flex-ai-c border-radius flex-col">
+            <span>Todo Empty</span>
+        </div>
+    )
     return (
         <div className="container todo flex flex-col flex-ai-c">
             <Search type="text" onSubmit={addTodoItem} />
             <div className="todo__list card-shadow w-100 border-radius">
-                { todoItemList }
+                { todoItemList.length > 0 ? todoItemList : emptyTodoTempalte }
                 <div className="todo__footer flex flex-jc-sb flex-ai-c">
                     <span>
                         { `${ todoList.filter(x => !x.isCompleted).length } items left`}
