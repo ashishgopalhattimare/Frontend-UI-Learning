@@ -1,24 +1,27 @@
 @import "src/index.scss";
 
+.user__profile {
+    max-height: 35px;
+    min-height: 35px;
+    max-width: 35px;
+    min-width: 35px;
+    
+    display: block;
+    background-color: black;
+    border-radius: 50%;
+}
+
 .comment {
     margin: .5rem .5rem;
+    margin-bottom: 0;
     padding: .5rem .5rem;
     border: 1px black solid;
     display: flex;
     flex-direction: column;
     &__main {
+        width: 100%;
         &__header {
             > .title__left {
-                > .user__profile {
-                    max-height: 35px;
-                    min-height: 35px;
-                    max-width: 35px;
-                    min-width: 35px;
-                    
-                    display: block;
-                    background-color: black;
-                    border-radius: 50%;
-                }
                 > .user__name {
                     font-weight: bold;
                     margin: 0 .8rem;
@@ -42,4 +45,11 @@
     @include breakpoint-up(medium) {
         flex-direction: row;
     }
+}
+
+.reply {
+    margin: .5rem .5rem;
+    margin-bottom: 0;
+    padding: .5rem .5rem;
+    border: 1px black solid;
 }

@@ -1,10 +1,10 @@
 import './App.scss';
-import Comment from './components/Comment/Comment';
+import Post from './components/Post/Post';
 
 function App() {
   return (
     <div className="App container">
-      <Comment />
+      <Post />
     </div>
   );
 }

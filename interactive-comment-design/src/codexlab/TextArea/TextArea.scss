@@ -1,0 +1,11 @@
+.textarea {
+    border: 2px solid rgb(205, 205, 205);
+    padding: 10px 16px;
+    width: 100%;
+    font-size: 0.8rem;
+    resize: vertical;
+    outline: none;
+    &:hover {
+        border: 2px solid rgb(220, 220, 220);
+    }
+}

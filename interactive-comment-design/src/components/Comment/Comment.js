@@ -1,17 +1,15 @@
-import { useState } from 'react';
+import { createRef, useState } from 'react';
 import './Comment.scss';
 import Button from '../../codexlab/Button/Button';
 import Rating from '../../codexlab/Rating/Rating';
+import TextArea from '../../codexlab/TextArea/TextArea';
 
 const Comment = (props) => {
 
-    const [comment, setComment] = useState({
-        name: 'Ashish Hattimare',
-        lastUpdated: '1 month ago',
-        message: `Impressive. Though it seems the drag feature to be improved. But overall it
-        looks incredible You've nailed the design and the responsiveness at various`,
-        rating: 18
-    });
+    const [comment, setComment] = useState(props.comment);
+    const [reply, setReply] = useState(false);
+
+    const replyRef = createRef();
 
     const updateRating = (factor) => {
         if (comment.rating === 0 && factor === -1) return;
@@ -19,9 +17,11 @@ const Comment = (props) => {
             ...comment,
             rating: comment.rating + factor
         });
-    }
+    };
+    const toggleReplyComment = () => setReply(!reply);
 
     return (
+        <>
         <section className="comment rounded-border">
             <Rating class="rounded-border hide-for-mobile"
                 style={{marginRight: '16px', flexDirection: 'column-reverse'}}
@@ -38,7 +38,7 @@ const Comment = (props) => {
                         <span className="last-updated">{ comment.lastUpdated }</span>
                     </span>
                     <span className="title__right">
-                        <Button class="primary rounded-border" label="REPLY"/>
+                    <Button class="primary rounded-border" label="REPLY" onClick={ toggleReplyComment }/>
                     </span>
                 </div>
                 <p className="comment__main__message">{ comment.message }</p>
@@ -50,9 +50,21 @@ const Comment = (props) => {
                     onIncrement={() => { updateRating( 1); }}
                     onDecrement={() => { updateRating(-1); }}
                 />
-                <Button class="primary rounded-border" label="REPLY"/>
+                <Button class="primary rounded-border" label="REPLY" onClick={ toggleReplyComment }/>
             </div>
         </section>
+        { reply ? (
+            <aside className="reply rounded-border flex flex-row">
+            <span className="user__profile"></span>
+            <TextArea className="rounded-border" ref={replyRef} style={{margin: '0 4px'}}/>
+            <Button class="secondary rounded-border" label="SEND" onClick= { () => {
+                console.log('reply', replyRef.current.value);
+                replyRef.current.value = '';
+                toggleReplyComment();
+            } }/>
+        </aside>
+        ) : "" }
+        </>
     );
 };
 export default Comment;
