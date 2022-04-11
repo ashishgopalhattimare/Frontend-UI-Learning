@@ -58,7 +58,7 @@ const Comment = (props) => {
             <span className="user__profile"></span>
             <TextArea className="rounded-border" ref={replyRef} style={{margin: '0 4px'}}/>
             <Button class="secondary rounded-border" label="SEND" onClick= { () => {
-                console.log('reply', replyRef.current.value);
+                props.reply(props.id, replyRef.current.value.trim());
                 replyRef.current.value = '';
                 toggleReplyComment();
             } }/>
