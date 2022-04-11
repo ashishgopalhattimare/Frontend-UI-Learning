@@ -1,0 +1,33 @@
+.rating {
+    background-color: black;
+    > span {
+        display: flex;
+        color: white;
+        width: 2.1875rem;
+        font-weight: bold;
+
+        justify-content: center;
+        align-items: center;
+
+        &:not(:nth-child(2)) {
+            font-size: 1.1rem;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+        }
+    }
+}
+
+.row-align {
+    > span {
+        height: 2.1875rem;
+    }
+}
+.col-align {
+    height: 5.625rem;
+    > span {
+        height: 1.75rem;
+        width: 2.5rem;
+    }
+}

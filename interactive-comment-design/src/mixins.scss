@@ -24,13 +24,13 @@ $breakpoints-down: ("small": "39.9375em", "medium": "53.9375em", "large": "87.43
 // Visibility
 .hide-for-mobile {
     // hide for tablet and mobile devices
-    @include breakpoint-down(medium) {
-        display: none;
+    @include breakpoint-down(small) {
+        display: none !important;
     }
-  }
-  .hide-for-desktop {
+}
+.hide-for-desktop {
     // hide for desktop viewport width
-    @include breakpoint-up(large) {
-        display: none;
+    @include breakpoint-up(medium) {
+        display: none !important;
     }
 }
