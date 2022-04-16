@@ -1,0 +1,23 @@
+@import "src/index.scss";
+
+.post {
+    .reply__container {
+        .reply__indicator {
+            height: auto;
+            width: 3.75rem;
+            margin-top: 0.5rem;
+            margin-left: .5rem;
+            > span {
+                display: block;
+                width: .125rem;
+                height: 100%;
+                background-color: rgb(205, 205, 205);
+            }
+
+            @include breakpoint-down(small) {
+                width: .125rem;
+                justify-content: start;
+            }
+        }
+    }   
+}

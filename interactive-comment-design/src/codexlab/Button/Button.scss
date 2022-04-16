@@ -1,0 +1,34 @@
+$white: white;
+$black: black;
+$disabled: rgb(225, 225, 225);
+
+.button, button {
+    padding: .75rem 1.125rem;
+    border-radius: .3125rem;
+    height: 40px;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.primary {
+    background-color: rgb(57, 91, 241);
+    color: $white;
+    &:hover {
+        background-color: rgb(48, 76, 197);
+    }
+}
+.secondary {
+    background-color: rgb(233, 181, 38);
+    color: $white;
+    &:hover {
+        background-color: rgb(172, 131, 20);
+    }
+}
+.white-btn {
+    background-color: $white;
+    color: $black;
+    &:hover {
+        background-color: $disabled;
+    }
+}
