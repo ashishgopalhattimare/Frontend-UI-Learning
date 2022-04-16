@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa {
+  font-size: 2rem;
+}
+.fa-star {
+  &-o::before {
+    content: "\f006";
+    color: #5f6368;
+  }
+  &::before {
+    content: "\f005";
+    color: #d56e0c;
+  }
+}
+#display-star {
+  font-size: 1.5rem;
+}
+.cursor {
+  cursor: pointer;
+}
+
+/* Do not add extra CSS */

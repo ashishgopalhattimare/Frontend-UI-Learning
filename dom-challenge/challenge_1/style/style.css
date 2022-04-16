@@ -1,0 +1,40 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.fa {
+  font-size: 2rem;
+}
+
+.fa-star-o::before {
+  content: "\f006";
+  color: #5f6368;
+}
+
+.fa-star::before {
+  content: "\f005";
+  color: #d56e0c;
+}
+
+#display-star {
+  font-size: 1.5rem;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Do not add extra CSS */
+/*# sourceMappingURL=style.css.map */
