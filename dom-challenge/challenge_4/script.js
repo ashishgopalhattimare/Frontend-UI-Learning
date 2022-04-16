@@ -53,9 +53,13 @@ function ColorSpotter(id, row, col) {
         } else {
         	let message$ = document.getElementById('message');
           message$.textContent = 'You got it wrong!!!';
+          
+          colorSpotter$.classList.add('shake');
+          
           setTimeout(() => {
           	new ColorSpotter('#color-spotter', DEFAULT_SIZE, DEFAULT_SIZE);
           	message$.textContent = '';
+            colorSpotter$.classList.remove('shake');
           }, 800);
         }
       });
